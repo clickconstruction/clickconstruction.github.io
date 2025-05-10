@@ -341,6 +341,35 @@ body {
     transform: translateY(-2px);
 }
 
+/* Custom Tool Cards */
+.custom-tool-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.custom-tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.custom-tool-card h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.custom-tool-card .btn-outline-primary {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.custom-tool-card .btn-outline-primary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero {
