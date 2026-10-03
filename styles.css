@@ -326,8 +326,8 @@ body {
 
 .note-author-quote blockquote p {
     margin: 0;
-    font-size: 1.35rem;
-    line-height: 1.5;
+    font-size: 1.15rem;
+    line-height: 1.55;
     font-weight: 600;
     font-style: italic;
     color: var(--primary-color);
