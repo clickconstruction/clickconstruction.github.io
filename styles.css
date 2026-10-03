@@ -152,6 +152,161 @@ body {
     transform: scaleX(-1) scale(1.2);
 }
 
+/* Services Intro */
+.services-intro {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.15rem;
+    color: var(--dark-gray);
+    text-align: left;
+}
+
+.services-tagline {
+    text-indent: 2em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.services-outcomes {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.services-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.services-readmore {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.services-readmore:hover {
+    color: var(--secondary-color);
+}
+
+/* Article Pages */
+.article-hero {
+    padding: 160px 0 60px;
+    margin-bottom: 3rem;
+}
+
+.article-hero h1 {
+    margin-bottom: 0;
+}
+
+.article-hero-sub {
+    font-size: 1.25rem;
+    margin: 1rem 0 0;
+}
+
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.article-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.article-card h2 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.article-card h2 a:hover {
+    color: var(--secondary-color);
+}
+
+.article-card p {
+    color: var(--dark-gray);
+}
+
+.article-card .article-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.article-column {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-body {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--dark-gray);
+}
+
+.article-body p,
+.article-body ul {
+    margin-bottom: 1.5rem;
+}
+
+.article-body li {
+    margin-bottom: 0.5rem;
+}
+
+.article-body h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 3rem 0 1.25rem;
+}
+
+.article-lead {
+    font-size: 1.35rem;
+    color: var(--primary-color);
+}
+
+.article-callout {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 1.25rem;
+    margin: 2.5rem 0;
+}
+
+.article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.article-back {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.article-back:hover {
+    color: var(--secondary-color);
+}
+
 /* Service Cards */
 .service-card {
     background: white;
@@ -268,52 +423,74 @@ body {
 }
 
 /* Contact Section */
-.contact-info {
-    padding: 2rem;
+.contact-intro {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--primary-color);
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     background: white;
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.contact-info {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-method {
-    padding: 1rem;
+    height: 100%;
     transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-title {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
 }
 
-.contact-method:hover {
-    transform: translateY(-2px);
-}
-
-.contact-method i {
+.contact-title i {
     color: var(--secondary-color);
-    flex-shrink: 0;
+    transition: color 0.3s ease;
 }
 
-.contact-method .content {
-    flex-grow: 1;
+.contact-card:hover .contact-title i {
+    animation: iconWiggle 0.5s ease;
+    color: #d35400;
 }
 
-.contact-method p {
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-}
-
-.contact-method .address {
-    color: var(--dark-gray);
+.contact-value {
+    font-size: 1.1rem;
     line-height: 1.5;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    overflow-wrap: anywhere;
 }
 
-.contact-method .btn {
-    margin-top: 0.25rem;
+.contact-value a {
+    color: var(--dark-gray);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-value a:hover {
+    color: var(--secondary-color);
+}
+
+.contact-card .btn {
+    margin-top: auto;
+}
+
+address.contact-value {
+    margin-bottom: 0;
 }
 
 .social-links a {
