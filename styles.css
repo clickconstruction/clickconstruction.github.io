@@ -406,6 +406,30 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Card Headings: icons sit left of the title when both fit on one line, above it when they don't */
+.card-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.card-heading .trade-icons {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.card-heading .trade-icons i {
+    margin-bottom: 0;
+}
+
+.card-heading h3,
+.card-heading h4 {
+    margin: 0;
+}
+
 /* About Section */
 .about-content .lead {
     font-size: 1.5rem;
