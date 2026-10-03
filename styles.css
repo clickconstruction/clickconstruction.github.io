@@ -187,28 +187,28 @@ body {
     color: var(--secondary-color);
 }
 
-/* Article Pages */
-.article-hero {
+/* Field Note Pages */
+.note-hero {
     padding: 160px 0 60px;
     margin-bottom: 3rem;
 }
 
-.article-hero h1 {
+.note-hero h1 {
     margin-bottom: 0;
 }
 
-.article-hero-sub {
+.note-hero-sub {
     font-size: 1.25rem;
     margin: 1rem 0 0;
 }
 
-.article-list {
+.note-list {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.article-card {
+.note-card {
     background: white;
     padding: 2rem;
     border-radius: 10px;
@@ -216,70 +216,70 @@ body {
     transition: transform 0.3s ease;
 }
 
-.article-card:hover {
+.note-card:hover {
     transform: translateY(-5px);
 }
 
-.article-card h2 {
+.note-card h2 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
 }
 
-.article-card h2 a {
+.note-card h2 a {
     color: var(--primary-color);
     text-decoration: none;
 }
 
-.article-card h2 a:hover {
+.note-card h2 a:hover {
     color: var(--secondary-color);
 }
 
-.article-card p {
+.note-card p {
     color: var(--dark-gray);
 }
 
-.article-card .article-date {
+.note-card .note-date {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
 }
 
-.article-column {
+.note-column {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.article-body {
+.note-body {
     font-size: 1.15rem;
     line-height: 1.75;
     color: var(--dark-gray);
 }
 
-.article-body p,
-.article-body ul {
+.note-body p,
+.note-body ul {
     margin-bottom: 1.5rem;
 }
 
-.article-body li {
+.note-body li {
     margin-bottom: 0.5rem;
 }
 
-.article-body h2 {
+.note-body h2 {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--primary-color);
     margin: 3rem 0 1.25rem;
 }
 
-.article-lead {
+.note-lead {
     font-size: 1.35rem;
     color: var(--primary-color);
 }
 
-.article-callout {
+.note-callout {
     font-size: 1.35rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -288,14 +288,14 @@ body {
     margin: 2.5rem 0;
 }
 
-.article-author-quote {
+.note-author-quote {
     display: flex;
     align-items: center;
     gap: 2rem;
     margin: 0 0 3rem;
 }
 
-.article-author-quote img {
+.note-author-quote img {
     width: 160px;
     height: 160px;
     flex-shrink: 0;
@@ -305,26 +305,26 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.article-author-quote-text {
+.note-author-quote-text {
     padding-left: 1.25rem;
     border-left: 4px solid var(--secondary-color);
 }
 
-.article-author-quote blockquote {
+.note-author-quote blockquote {
     margin: 0 0 0.75rem;
 }
 
-.article-author-quote figcaption {
+.note-author-quote figcaption {
     font-size: 1rem;
     color: var(--dark-gray);
 }
 
-.article-author-name {
+.note-author-name {
     font-weight: 700;
     color: var(--primary-color);
 }
 
-.article-author-quote blockquote p {
+.note-author-quote blockquote p {
     margin: 0;
     font-size: 1.35rem;
     line-height: 1.5;
@@ -334,19 +334,19 @@ body {
 }
 
 @media (max-width: 576px) {
-    .article-author-quote {
+    .note-author-quote {
         flex-direction: column;
         align-items: flex-start;
         gap: 1.5rem;
     }
 
-    .article-author-quote img {
+    .note-author-quote img {
         width: 120px;
         height: 120px;
     }
 }
 
-.article-cta {
+.note-cta {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -357,12 +357,12 @@ body {
     border-top: 1px solid #dee2e6;
 }
 
-.article-back {
+.note-back {
     font-weight: 600;
     color: var(--primary-color);
 }
 
-.article-back:hover {
+.note-back:hover {
     color: var(--secondary-color);
 }
 
