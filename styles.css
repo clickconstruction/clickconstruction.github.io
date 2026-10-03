@@ -288,6 +288,64 @@ body {
     margin: 2.5rem 0;
 }
 
+.article-author-quote {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 0 3rem;
+}
+
+.article-author-quote img {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.article-author-quote-text {
+    padding-left: 1.25rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.article-author-quote blockquote {
+    margin: 0 0 0.75rem;
+}
+
+.article-author-quote figcaption {
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+.article-author-name {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.article-author-quote blockquote p {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+@media (max-width: 576px) {
+    .article-author-quote {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .article-author-quote img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 .article-cta {
     display: flex;
     flex-wrap: wrap;
