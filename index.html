@@ -98,7 +98,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h1>Revolutionizing Construction Across Texas</h1>
-                    <p class="lead">We wanted to improve the construction process and found we were only able to do so by making custom construction tools.</p>
+                    <p class="lead">We wanted to improve the construction process and found the most progress came from custom construction tools.</p>
                     <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
                 </div>
             </div>
@@ -296,29 +296,135 @@
     <section id="contact" class="py-5 bg-light">
         <div class="container">
             <div class="contact-intro text-center mb-5">
-                <p class="lead mb-0">Have a job stalling on open questions?<br>Call or email us and we'll walk through it with you.</p>
+                <h2 class="mb-3">Bring Us the Open Question</h2>
+                <p class="lead mb-0">Every stalled job has one question that has been waiting longest. Tell us what it is and what it's holding up, and we'll tell you where we'd start.</p>
             </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="contact-card">
-                        <h3 class="contact-title"><i class="fas fa-phone" title="Call"></i>Call</h3>
-                        <p class="contact-value"><a href="tel:+15123600599">512-360-0599</a></p>
-                        <a href="tel:+15123600599" class="btn btn-primary">Call Now</a>
-                    </div>
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-7 order-lg-1">
+                    <form id="contact-form" class="contact-form-card" action="https://contact.clickconstruction.com/" method="post" novalidate data-turnstile-sitekey="">
+                        <fieldset class="contact-step">
+                            <legend><span class="contact-step-num">1</span>What's waiting on an answer?</legend>
+                            <p class="contact-step-hint">Pick everything that applies.</p>
+                            <div class="contact-chips">
+                                <input type="checkbox" class="btn-check" id="open-materials" name="open" value="Materials" autocomplete="off">
+                                <label class="contact-chip" for="open-materials"><i class="fas fa-boxes"></i>Materials</label>
+                                <input type="checkbox" class="btn-check" id="open-access" name="open" value="Site access" autocomplete="off">
+                                <label class="contact-chip" for="open-access"><i class="fas fa-key"></i>Site access</label>
+                                <input type="checkbox" class="btn-check" id="open-rfis" name="open" value="RFIs" autocomplete="off">
+                                <label class="contact-chip" for="open-rfis"><i class="fas fa-question-circle"></i>RFIs</label>
+                                <input type="checkbox" class="btn-check" id="open-approvals" name="open" value="Approvals" autocomplete="off">
+                                <label class="contact-chip" for="open-approvals"><i class="fas fa-check-double"></i>Approvals</label>
+                                <input type="checkbox" class="btn-check" id="open-sequence" name="open" value="Sequence / schedule" autocomplete="off">
+                                <label class="contact-chip" for="open-sequence"><i class="fas fa-list-ol"></i>Sequence</label>
+                                <input type="checkbox" class="btn-check" id="open-changes" name="open" value="Change orders" autocomplete="off">
+                                <label class="contact-chip" for="open-changes"><i class="fas fa-file-signature"></i>Change orders</label>
+                                <input type="checkbox" class="btn-check" id="open-subs" name="open" value="Subs out of sync" autocomplete="off">
+                                <label class="contact-chip" for="open-subs"><i class="fas fa-people-arrows"></i>Subs out of sync</label>
+                                <input type="checkbox" class="btn-check" id="open-planning" name="open" value="Not stuck yet, planning ahead" autocomplete="off">
+                                <label class="contact-chip" for="open-planning"><i class="fas fa-compass"></i>Not stuck yet, planning ahead</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="contact-step">
+                            <legend><span class="contact-step-num">2</span>The job</legend>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="contact-project-type" class="form-label">Type of project</label>
+                                    <select class="form-select" id="contact-project-type" name="project_type">
+                                        <option value="">Choose one</option>
+                                        <option>Commercial</option>
+                                        <option>Residential</option>
+                                        <option>Multifamily</option>
+                                        <option>Industrial</option>
+                                        <option>Public or institutional</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-stage" class="form-label">Where it stands</label>
+                                    <select class="form-select" id="contact-stage" name="stage">
+                                        <option value="">Choose one</option>
+                                        <option>Planning</option>
+                                        <option>Permitting</option>
+                                        <option>Under construction</option>
+                                        <option>Finishing or closeout</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-city" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="contact-city" name="city" placeholder="Austin" maxlength="80" autocomplete="address-level2">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-role" class="form-label">Your part in it</label>
+                                    <select class="form-select" id="contact-role" name="role">
+                                        <option value="">Choose one</option>
+                                        <option>Owner or developer</option>
+                                        <option>General contractor</option>
+                                        <option>Subcontractor</option>
+                                        <option>Architect or engineer</option>
+                                        <option>Project manager</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contact-message" class="form-label">The question that's been open longest</label>
+                                    <textarea class="form-control" id="contact-message" name="message" rows="3" maxlength="3000" placeholder="Three weeks waiting on the switchgear submittal, and the electrician is about to pull off."></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="contact-step">
+                            <legend><span class="contact-step-num">3</span>Where to send the answer</legend>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="contact-name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="contact-name" name="name" autocomplete="name" maxlength="100" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-company" class="form-label">Company <span class="contact-optional">optional</span></label>
+                                    <input type="text" class="form-control" id="contact-company" name="company" autocomplete="organization" maxlength="120">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="contact-phone" name="phone" autocomplete="tel" maxlength="40">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contact-email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="contact-email" name="email" autocomplete="email" maxlength="254">
+                                </div>
+                            </div>
+                            <div class="contact-honeypot" aria-hidden="true">
+                                <label for="contact-website">Website</label>
+                                <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                        </fieldset>
+
+                        <div class="contact-turnstile"></div>
+                        <div class="contact-submit">
+                            <button type="submit" class="btn btn-primary btn-lg">Send It Over</button>
+                            <small class="contact-form-hint">Phone or email, whichever you prefer.<br>No newsletter, no sales sequence.</small>
+                        </div>
+                        <p class="contact-form-status mb-0" role="status" aria-live="polite"></p>
+                    </form>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="contact-card">
-                        <h3 class="contact-title"><i class="fas fa-envelope" title="Email"></i>Email</h3>
-                        <p class="contact-value"><a href="mailto:info@clickconstruction.com">info@clickconstruction.com</a></p>
-                        <a href="mailto:info@clickconstruction.com" class="btn btn-primary">Send an Email</a>
+
+                <aside class="col-lg-5 order-first order-lg-2">
+                    <div class="contact-aside">
+                        <div class="contact-card contact-value-card">
+                            <h3 class="contact-title"><i class="fas fa-reply" title="Reply"></i>What You Get Back</h3>
+                            <ul class="contact-value-list">
+                                <li><i class="fas fa-check"></i><span><strong>A straight read.</strong> Whether the job is stuck on information or on judgment. The fix is different for each.</span></li>
+                                <li><i class="fas fa-check"></i><span><strong>Where we'd start.</strong> The first open decision we'd close, and who is holding it.</span></li>
+                                <li><i class="fas fa-check"></i><span><strong>A person, not a queue.</strong> Your note lands in Robert's inbox, and the reply comes from him.</span></li>
+                            </ul>
+                        </div>
+                        <div class="contact-card contact-call-card">
+                            <h3 class="contact-title"><i class="fas fa-phone" title="Call"></i>Need an Answer Today?</h3>
+                            <p class="contact-value">Call and talk to a person who has stood on a job site.<br><a href="tel:+15123600599">512-360-0599</a></p>
+                            <a href="tel:+15123600599" class="btn btn-primary btn-lg">Call Now</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="contact-card">
-                        <h3 class="contact-title"><i class="fas fa-map-marker-alt" title="Mail"></i>Mail</h3>
-                        <address class="contact-value">Attn: Click Construction<br>5501 Balcones Dr A141<br>Austin, TX 78731</address>
-                    </div>
-                </div>
+                </aside>
             </div>
         </div>
     </section>
@@ -329,6 +435,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <p>&copy; 2026 Click Construction. All rights reserved.</p>
+                    <p class="footer-address mb-0">5501 Balcones Dr A141, Austin, TX 78731 &middot; <a href="mailto:info@clickconstruction.com" class="text-white">info@clickconstruction.com</a></p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="tools.html" class="text-white me-3">Tools</a>

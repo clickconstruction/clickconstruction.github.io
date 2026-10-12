@@ -25,14 +25,68 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Form submission handling
+    // Contact form: posts to the Worker in the background, no page reload
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        const status = contactForm.querySelector('.contact-form-status');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const sitekey = contactForm.dataset.turnstileSitekey;
+
+        if (sitekey) {
+            const holder = contactForm.querySelector('.contact-turnstile');
+            const turnstileScript = document.createElement('script');
+            turnstileScript.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+            turnstileScript.async = true;
+            turnstileScript.onload = () => window.turnstile.render(holder, { sitekey, size: 'flexible' });
+            document.head.appendChild(turnstileScript);
+        }
+
+        const showStatus = (text, kind) => {
+            status.textContent = text;
+            status.className = 'contact-form-status mb-0 is-' + kind;
+        };
+
+        if (new URLSearchParams(window.location.search).get('sent') === '1') {
+            showStatus('Got it. We\'ll read it and come back to you with where we\'d start.', 'success');
+        }
+
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            data.open = formData.getAll('open');
+            if (!data.name || data.name.trim().length < 2) {
+                showStatus('Please tell us your name.', 'error');
+                contactForm.name.focus();
+                return;
+            }
+            if (!data.phone.trim() && !data.email.trim()) {
+                showStatus('Please include a phone number or an email address.', 'error');
+                contactForm.phone.focus();
+                return;
+            }
+
+            submitButton.disabled = true;
+            showStatus('Sending\u2026', 'pending');
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json().catch(() => ({}));
+                if (response.ok && result.ok) {
+                    contactForm.reset();
+                    if (window.turnstile) window.turnstile.reset();
+                    showStatus('Got it. We\'ll read it and come back to you with where we\'d start.', 'success');
+                } else {
+                    showStatus(result.error || 'Something went wrong. Please call us at 512-360-0599.', 'error');
+                }
+            } catch (err) {
+                showStatus('We couldn\'t reach the server. Please call us at 512-360-0599.', 'error');
+            } finally {
+                submitButton.disabled = false;
+            }
         });
     }
 
