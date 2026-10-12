@@ -162,7 +162,6 @@ function buildMessage({ name, company, phone, email, message, open, projectType,
     "Content-Type: text/plain; charset=utf-8",
     "Content-Transfer-Encoding: base64",
   ];
-  if (email) headers.push(`Reply-To: ${encodeHeader(name)} <${email}>`);
   return headers.join("\r\n") + "\r\n\r\n" + base64Wrap(lines.join("\n")) + "\r\n";
 }
 
