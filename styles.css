@@ -10,6 +10,16 @@ body {
     line-height: 1.6;
 }
 
+/* Anchored sections land below the fixed navbar instead of under it */
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+/* Contact is the last section; give it room so the page can scroll it to the top */
+#contact {
+    min-height: calc(100vh - 90px);
+}
+
 /* Navigation */
 .navbar {
     background-color: white;
