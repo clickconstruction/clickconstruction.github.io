@@ -68,7 +68,33 @@ section[id] {
     color: var(--dark-gray);
     font-weight: 500;
     margin: 0 0.5rem;
+    white-space: nowrap;
     transition: color 0.3s ease;
+}
+
+/* Keep the expanded navbar on one line between the lg and xl breakpoints */
+@media (min-width: 992px) {
+    .navbar-nav {
+        align-items: center;
+    }
+
+    .navbar-nav .nav-link.btn {
+        margin-left: 0.75rem;
+        padding: 0.5rem 1.1rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .nav-link {
+        margin: 0 0.15rem;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        font-size: 0.95rem;
+    }
 }
 
 .nav-link:hover {
@@ -669,4 +695,218 @@ address.contact-value {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Contact form */
+.contact-form-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact-step {
+    margin-bottom: 1.75rem;
+}
+
+.contact-step legend {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.contact-step-hint {
+    color: #6c757d;
+    margin: 0 0 0.75rem;
+}
+
+.contact-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #dee2e6;
+    border-radius: 999px;
+    background: white;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.contact-chip i {
+    color: var(--secondary-color);
+}
+
+.contact-chip:hover {
+    border-color: var(--secondary-color);
+}
+
+.btn-check:checked + .contact-chip {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-check:checked + .contact-chip i {
+    color: white;
+}
+
+.btn-check:focus-visible + .contact-chip {
+    box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.35);
+}
+
+.contact-form-card .form-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.contact-optional {
+    font-weight: 400;
+    color: #6c757d;
+    font-size: 0.85em;
+}
+
+.contact-form-card .form-control:focus,
+.contact-form-card .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.25);
+}
+
+.contact-submit {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.contact-form-hint {
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.contact-form-status {
+    min-height: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.contact-form-status.is-success {
+    color: #1e7e34;
+}
+
+.contact-form-status.is-error {
+    color: #b02a37;
+}
+
+.contact-honeypot {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.contact-turnstile:empty {
+    display: none;
+}
+
+.contact-aside {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+}
+
+@media (min-width: 992px) {
+    .contact-aside {
+        flex-direction: column;
+        position: sticky;
+        top: 100px;
+    }
+}
+
+.contact-value-card {
+    align-items: stretch;
+    text-align: left;
+}
+
+.contact-value-card .contact-title {
+    justify-content: flex-start;
+}
+
+.contact-value-card:hover {
+    transform: none;
+}
+
+.contact-value-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.contact-value-list li {
+    display: flex;
+    gap: 0.75rem;
+    line-height: 1.5;
+    color: var(--dark-gray);
+}
+
+.contact-value-list i {
+    color: var(--secondary-color);
+    margin-top: 0.3rem;
+    flex-shrink: 0;
+}
+
+.contact-value-list strong {
+    color: var(--primary-color);
+}
+
+.contact-call-card {
+    justify-content: center;
+}
+
+.contact-call-card .contact-value a {
+    display: inline-block;
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+}
+
+.contact-call-card .btn {
+    margin-top: 0;
+}
+
+.footer-address {
+    font-size: 0.9rem;
+    opacity: 0.85;
 }
