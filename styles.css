@@ -118,8 +118,14 @@ section[id] {
     margin-bottom: 1.5rem;
 }
 
+/* Tagline reads as three stacked lines at every width */
+.hero-line {
+    display: block;
+}
+
 .hero p {
     font-size: 1.25rem;
+    max-width: 640px;
     margin-bottom: 2rem;
 }
 
@@ -675,9 +681,16 @@ address.contact-value {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .service-card, .benefit-card, .testimonial-card {
         margin-bottom: 1.5rem;
+    }
+}
+
+/* Phones: keep each tagline line whole */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.75rem;
     }
 }
 
